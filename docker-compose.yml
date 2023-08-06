@@ -4,9 +4,9 @@ services:
   backend:
     restart: always
     build: ./backend
-    command: bash -c "python3 ./backend/manage.py migrate && python3 ./backend/manage.py runserver 0.0.0.0:8000"
+    command: bash -c "python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
     volumes:
-      - .:/code
+      - ./backend:/code
     ports:
       - "8000:8000"
     depends_on:
