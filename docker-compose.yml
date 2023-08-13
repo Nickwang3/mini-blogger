@@ -4,7 +4,7 @@ services:
   backend:
     restart: always
     build: ./backend
-    command: bash -c "python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
+    command: bash -c "python3 manage.py makemigrations && python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
     volumes:
       - ./backend:/code
     ports:
@@ -12,6 +12,11 @@ services:
     depends_on:
       - db
     environment:
+      # general settings
+      SECRET_KEY: '(#w*9%!t+af^do-^k9&e%*m9l*_p-73!hqpzv0lsr)*(-8zj9a'
+      DEBUG: 'True'
+      ALLOWED_HOSTS: '*'
+      # database
       DB_NAME: docker
       DB_USER: docker
       DB_PASSWORD: docker
@@ -25,4 +30,3 @@ services:
     environment:
       POSTGRES_USER: docker
       POSTGRES_PASSWORD: docker
-      POSTGRES_DB: docker

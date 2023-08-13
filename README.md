@@ -9,12 +9,13 @@ An app for posting thoughts, news, and more.
 
 ### Visit localhost:8000 to see django instance
 
-### Running django admin commands to create new apps
+### Running django manage commands
 
 You need to connect to the docker instance and then run the command. This allows you to use the correct package versions as 
 defined in the docker container.
 
 `docker-compose exec backend bash` to get shell.
-`python3 backend/manage.py startapp <app_name>` to create a new app with the files generated.
+
+From this shell you can run any docker management commands. Note that these commands are not persistent.
 
 ## Deploying to Production Environment
