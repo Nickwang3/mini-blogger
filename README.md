@@ -5,6 +5,8 @@ An app for posting thoughts, news, and more.
 
 ### Install Docker
 
+### Make sure docker is running
+
 ### Run docker-compose up --build
 
 ### Visit localhost:8000 to see django instance
